@@ -41,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* soft blurred colour blobs behind the glass */
     body::before,
     body::after {
       content: "";
@@ -70,7 +69,6 @@
       opacity: .8;
     }
 
-    /* ---------- Entrance for sidebar + header ---------- */
     @keyframes riseIn {
       from {
         opacity: 0;
@@ -89,125 +87,6 @@
       animation-delay: calc(var(--d, 0) * 1ms);
     }
 
-    /* ---------- Profile card ---------- */
-    .profile-card {
-      background: #fff;
-      border-radius: 28px;
-      border: 1px solid rgba(255, 255, 255, .9);
-      box-shadow:
-        0 1px 1px rgba(16, 40, 26, .05),
-        0 6px 12px rgba(16, 40, 26, .06),
-        0 18px 32px rgba(16, 40, 26, .08),
-        0 40px 70px -10px rgba(11, 122, 69, .18),
-        inset 0 1px 0 #fff;
-    }
-
-    .logo-box {
-      width: 76px;
-      height: 76px;
-      border-radius: 22px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, #1cbf72, #0a6d3d);
-      color: #fff;
-      font-size: 30px;
-      box-shadow:
-        0 10px 20px rgba(11, 122, 69, .35),
-        inset 0 2px 0 rgba(255, 255, 255, .35),
-        inset 0 -6px 10px rgba(0, 0, 0, .15);
-    }
-
-    .avatar-ring {
-      width: 112px;
-      height: 112px;
-      border-radius: 50%;
-      padding: 5px;
-      background: conic-gradient(from 210deg, #14a75f, #a8e6c3, #14a75f);
-      box-shadow: 0 14px 26px rgba(11, 122, 69, .28);
-      position: relative;
-    }
-
-    .avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(160deg, #f2faf5, #d6ecdf);
-      color: var(--green);
-      font-size: 44px;
-      border: 4px solid #fff;
-      box-shadow: inset 0 4px 10px rgba(11, 122, 69, .15);
-    }
-
-    .avatar-dot {
-      position: absolute;
-      right: 8px;
-      bottom: 8px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #22c55e;
-      border: 3px solid #fff;
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, .6);
-      animation: pulse 2.2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, .55);
-      }
-
-      70% {
-        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-      }
-    }
-
-    .info-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, #fbfdfc, #f3f8f5);
-      border: 1px solid var(--line);
-      box-shadow: 0 2px 4px rgba(16, 40, 26, .04), inset 0 1px 0 #fff;
-      text-align: left;
-    }
-
-    .info-ico {
-      flex: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: var(--green-soft);
-      color: var(--green);
-      font-size: 14px;
-      box-shadow: inset 0 -2px 4px rgba(11, 122, 69, .12);
-    }
-
-    .info-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      line-height: 1.2;
-    }
-
-    .info-value {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.35;
-      word-break: break-word;
-    }
-
-    /* ---------- Header bar (glass) ---------- */
     .header-bar {
       display: flex;
       align-items: center;
@@ -238,7 +117,6 @@
       box-shadow: 0 8px 16px rgba(11, 122, 69, .3), inset 0 2px 0 rgba(255, 255, 255, .3);
     }
 
-    /* ---------- App grid ---------- */
     .app-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -253,10 +131,17 @@
       }
     }
 
-    @media (min-width:1100px) {
+    @media (min-width:900px) {
       .app-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+    }
+
+    @media (min-width:1250px) {
+      .app-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 22px;
       }
     }
 
@@ -266,7 +151,6 @@
       animation-delay: calc(450ms + var(--i) * 130ms);
     }
 
-    /* ---------- 3D card ---------- */
     .card {
       --rx: 0deg;
       --ry: 0deg;
@@ -380,7 +264,6 @@
       animation: bounce .45s cubic-bezier(.3, 1.6, .5, 1);
     }
 
-    /* ripple */
     .ripple {
       position: absolute;
       border-radius: 50%;
@@ -397,24 +280,18 @@
       }
     }
 
-    /* footer note */
     .foot {
       color: var(--muted);
       font-size: 12px;
       font-weight: 500;
     }
 
-    /* ---------- Accessibility ---------- */
     @media (prefers-reduced-motion:reduce) {
 
       .enter,
       .cell {
         animation: none;
         opacity: 1;
-      }
-
-      .avatar-dot {
-        animation: none;
       }
 
       .card,
@@ -431,22 +308,18 @@
 </head>
 
 <body>
-  <div class="mx-auto flex min-h-screen w-full max-w-[1180px] items-center px-4 py-8 sm:px-6 lg:px-8">
+  <div class="mx-auto flex min-h-screen w-full max-w-[1400px] items-center px-4 py-8 sm:px-6 lg:px-8">
     <div class="w-full">
 
-      <!-- ================= MAIN CONTENT ================= -->
       <main class="min-w-0">
 
-        <!-- Header bar -->
         <header class="header-bar enter" style="--d:150">
           <span class="header-ico"><i class="fa-solid fa-building-columns"></i></span>
           <h1 id="deptName" class="text-base sm:text-lg font-extrabold leading-snug">Department Name</h1>
         </header>
 
-        <!-- App grid -->
         <nav class="app-grid mt-7" aria-label="Applications">
 
-          <!-- Har card ka link data-href / href mein badal dein -->
           <div class="cell" style="--i:0">
             <a class="card" href="#"
               data-href="https://docs.google.com/forms/d/e/1FAIpQLSe7JERAT6Mhm0_DJNOAel7gDedOPPAg1u0-M3zVZL5tw_5WXA/viewform?usp=sharing&ouid=109767697067093692996"
@@ -483,6 +356,15 @@
             </a>
           </div>
 
+          <div class="cell" style="--i:4">
+            <a class="card" href="#"
+              data-href="https://docs.google.com/forms/d/e/1FAIpQLSeJQXZjL2dBmNsaYxI50UYhR8v_vhKIW6Cd3FU51buCNky7Hg/viewform?usp=pp_url&entry.60256494=267701101007020"
+              style="--accent:#7c3aed;--accent-soft:#ece3fb">
+              <span class="icon-wrap"><i class="fa-solid fa-money-check-dollar"></i></span>
+              <span class="card-title">Sanitation Bill Office Pay</span>
+            </a>
+          </div>
+
         </nav>
 
         <p class="foot mt-10 text-center">&copy; <span id="year"></span> Department Portal</p>
@@ -491,7 +373,6 @@
   </div>
 
   <script>
-    /* ---------- Yahan apna data set karein ---------- */
     const CONFIG = {
       department: 'Revenue Department'
     };
@@ -499,12 +380,10 @@
     document.getElementById('deptName').textContent = CONFIG.department;
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    /* ---------- Card interactions ---------- */
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     document.querySelectorAll('.card').forEach(card => {
 
-      // 3D tilt (mouse only)
       if (!reduceMotion) {
         card.addEventListener('pointermove', e => {
           if (e.pointerType !== 'mouse') return;
@@ -520,9 +399,7 @@
         });
       }
 
-      // Click: ripple + bounce, phir link open
       card.addEventListener('click', e => {
-        // new tab / modified click ko normal chalne dein
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
         e.preventDefault();
 
@@ -542,7 +419,7 @@
 
           const icon = card.querySelector('.icon-wrap');
           icon.classList.remove('bounce');
-          void icon.offsetWidth;            // animation restart
+          void icon.offsetWidth;
           icon.classList.add('bounce');
         }
 
